@@ -110,6 +110,7 @@ const largerLinkButton = document.querySelector("#largerLinksBtn");
 largerLinkButton.addEventListener("click", () => {
 
     const a = document.querySelectorAll("a");
+    //adding for loop
     for(let i = 0; i < a.length; i++){
         a[i].style.fontSize = "larger";
     }
