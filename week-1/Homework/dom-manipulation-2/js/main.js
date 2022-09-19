@@ -56,14 +56,79 @@ greenButton.addEventListener("click", (e) =>{
 
 //Part 2
 
-//get button
-const sumbitButton = document.querySelector("#D53F041CF95447678F1DF306200C2EE3.btn")
+//Selecting all the feilds first
+const form = document.querySelector("form")
+const email = document.querySelector("#exampleInputEmail1");
+const username = document.querySelector("#example-text-input");
+const describeYouself = document.querySelector("#exampleTextarea");
 
-sumbitButton.addEventListener("click", () => {
-    const inputInside = document.querySelector(".form-control").value
-    const emailCheck = document.querySelector("#exampleInputEmail1")
-    if(inputInside.length > 0 && emailCheck.includes("@")){
-        console.log()
-    }
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    checkInputs();
 })
 
+//geting all the input values
+const emailValue = email.value.trim();
+const usernameValue = username.value.trim();
+const describeValue = describeYouself.value.trim();
+const symbolCheckInEmail = emailValue.includes("@")
+
+function checkInputs(){
+
+  if(emailValue === "" && symbolCheckInEmail == false){
+      //show error
+      setErrorFor(email, "Email cannot be blanked")
+      email.style.backgroundColor  = "red"
+      
+    }else{
+         //add success
+         setSuccess(email);
+         email.style.backgroundColor = "green"
+}
+}
+
+function setErrorFor(someinput,message){
+    const formControl = someinput.parentElement;
+    const small = document.querySelector("small")
+
+    small.innerText = message;
+
+    //adding classes
+    formControl.className = "form-control error"
+}
+
+function setSuccess(someinput){
+    const formControl = someinput.parentElement;
+    formControl.className = "form-control success"
+}
+
+//Adding second function for username
+// function checkUsername(){
+
+//     if(username === ""){
+//         //show error
+//         setError(username, "Email cannot be blanked")
+//         email.style.backgroundColor  = "red"
+        
+//       }else{
+//            //add success
+//            setSuccess(username);
+//            email.style.backgroundColor = "green"
+//   }
+//   }
+  
+//   function setErrorFor(someinput,message){
+//       const formControl = someinput.parentElement;
+//       const small = document.querySelector("small")
+  
+//       small.innerText = message;
+  
+//       //adding classes
+//       formControl.className = "form-control error"
+//   }
+  
+//   function setSuccess(someinput){
+//       const formControl = someinput.parentElement;
+//       formControl.className = "form-control success"
+//   }

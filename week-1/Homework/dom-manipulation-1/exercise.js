@@ -27,7 +27,7 @@ Write JavaScript below that logs:
  const jumboText = document.querySelector("#jumbotron-text")
  console.log(jumboText);
 
- const primaryElements = document.querySelector(".primary-content p")
+ const primaryElements = document.querySelectorAll(".primary-content p")
  console.log(primaryElements)
 
 /*
@@ -81,6 +81,7 @@ const textButton = document.querySelector("#addTextBtn");
 
 //adding event listner
 textButton.addEventListener("click", (e) => {
+    e.preventDefault()
 
     //selecting the below learn more div
 
@@ -109,10 +110,10 @@ const largerLinkButton = document.querySelector("#largerLinksBtn");
 
 largerLinkButton.addEventListener("click", () => {
 
-    const a = document.querySelectorAll("a");
+    const allLinks = document.querySelectorAll("a");
     //adding for loop
-    for(let i = 0; i < a.length; i++){
-        a[i].style.fontSize = "larger";
+    for(let i = 0; i < allLinks.length; i++){
+        allLinks[i].style.fontSize = "larger";
     }
 })
 /*
@@ -144,23 +145,17 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
-let newColors = ["red","blue","green","grey","orange","white"]
 
-//get Button
+ //get Button
 
-// const newColorButton = document.querySelector("#bgrChangeBtn")
+ const newColorButton = document.querySelector("#bgrChangeBtn")
+ let i = 0
 
-// //adding Event Listner
+ //adding Event Listner
 
-// colorButton.addEventListener("click", (e) =>{
-//  // adding forEach method
-//  newColors.forEach(function(item){
+ newColorButton.addEventListener("click", (e) =>{
+    const newColors = ["red", "pink", "blue", "green", "orange"];
+    i= i < newColors.length ? ++i : 0
+    document.body.style.background = newColors[i];
+    })
      
-//      //get the body
-//      const Wholebody = document.querySelector("body")
-     
-//      Wholebody.style.backgroundColor = item;
-//  })
-     
-    
-// })
