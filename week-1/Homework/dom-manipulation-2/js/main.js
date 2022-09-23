@@ -59,76 +59,120 @@ greenButton.addEventListener("click", (e) =>{
 //Selecting all the feilds first
 const form = document.querySelector("form")
 const email = document.querySelector("#exampleInputEmail1");
-const username = document.querySelector("#example-text-input");
 const describeYouself = document.querySelector("#exampleTextarea");
 
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
-
+    
     checkInputs();
+    checkUsername();
+    describing();
 })
 
+
+
 //geting all the input values
-const emailValue = email.value.trim();
-const usernameValue = username.value.trim();
-const describeValue = describeYouself.value.trim();
-const symbolCheckInEmail = emailValue.includes("@")
 
 function checkInputs(){
-
-  if(emailValue === "" && symbolCheckInEmail == false){
-      //show error
-      setErrorFor(email, "Email cannot be blanked")
-      email.style.backgroundColor  = "red"
-      
+    const emailValue = email.value.trim();
+    const symbolCheckInEmail = emailValue.includes("@")
+    
+    if(emailValue === "" || !symbolCheckInEmail){
+        //show error
+        setErrorFor(email, "Email cannot be blanked")
+        email.style.backgroundColor  = "red"
+        console.log(emailValue)
+        
+        
     }else{
-         //add success
-         setSuccess(email);
-         email.style.backgroundColor = "green"
-}
+        //add success
+        setSuccess(email);
+        console.log("Test")
+        email.style.backgroundColor = "green"
+    }
 }
 
 function setErrorFor(someinput,message){
     const formControl = someinput.parentElement;
     const small = document.querySelector("small")
-
+    
     small.innerText = message;
-
+    
     //adding classes
     formControl.className = "form-control error"
-}
-
-function setSuccess(someinput){
-    const formControl = someinput.parentElement;
-    formControl.className = "form-control success"
-}
-
-//Adding second function for username
-// function checkUsername(){
-
-//     if(username === ""){
-//         //show error
-//         setError(username, "Email cannot be blanked")
-//         email.style.backgroundColor  = "red"
+    }
+    
+    function setSuccess(someinput){
+        const formControl = someinput.parentElement;
+        formControl.className = "form-control success"
+    }
+    
+    //===============================================================================================
+    
+    //Adding second function for username
+    function checkUsername(){
+        const username = document.querySelector("#example-text-input");
+        const usernameValue = username.value.trim();
         
-//       }else{
-//            //add success
-//            setSuccess(username);
-//            email.style.backgroundColor = "green"
-//   }
-//   }
+        if(usernameValue === ""){
+            //show error
+            setError(username, "Username cannot be blanked")
+            username.style.backgroundColor  = "red"
+            
+        }else{
+            //add success
+            setSuccessFor(username);
+            console.log("second test")
+           username.style.backgroundColor = "green"
+        }
+    }
+    
+    function setError(someinput,message){
+        const formControl = someinput.parentElement;
+        const small = document.querySelector("small")
+        
+        small.innerText = message;
+        
+        //adding classes
+        formControl.className = "form-control error"
+    }
+    
+    function setSuccessFor(someinput){
+        const formControl = someinput.parentElement;
+        formControl.className = "form-control success"
+    }
   
-//   function setErrorFor(someinput,message){
-//       const formControl = someinput.parentElement;
-//       const small = document.querySelector("small")
+  //===============================================================================================
   
-//       small.innerText = message;
+  //Adding third function for describeYourself
+  function describing(){
+      const describeValue = describeYouself.value.trim();
+      
+      
+      if(describeValue === ""){
+          //show error
+        setError(describeYouself, "describe Yourself cannot be blanked")
+        describeYouself.style.backgroundColor  = "red"
+        
+    }else{
+        //add success
+        setSuccessFor(describeYouself);
+        console.log("third success test")
+        describeYouself.style.backgroundColor = "green"
+  }
+}
   
-//       //adding classes
-//       formControl.className = "form-control error"
-//   }
+function setError(someinput,message){
+    const formControl = someinput.parentElement;
+      const small = document.querySelector("small")
   
-//   function setSuccess(someinput){
-//       const formControl = someinput.parentElement;
-//       formControl.className = "form-control success"
-//   }
+      small.innerText = message;
+  
+      //adding classes
+      formControl.className = "form-control error"
+  }
+  
+  function setSuccessFor(someinput){
+      const formControl = someinput.parentElement;
+      formControl.className = "form-control success"
+  }
