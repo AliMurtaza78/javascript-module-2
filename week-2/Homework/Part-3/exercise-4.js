@@ -59,7 +59,12 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
+    
+      const availableSeats = restaurants.map((e) => e.numberOfCustomers < e.totalSeats)
+      console.log(availableSeats)
+      if(availableSeats >= numberOfPeople){
+        return availableSeats.name
+      }
     },
     findRestaurantServingDish: function (dishName) {
       // Complete here

@@ -8,46 +8,59 @@ getCoffee takes a coffee type in parameter and dispends the selected coffee
 only if the inserted amount is greater or equal than the price of the coffee!
 */
 
-let coffeeMachine = {
-    brand: "Super Coffee",
-    prices: {
-      cappuccino: 2.4,
-      blackCoffee: 1.5,
-      flatWhite: 3.0,
-    },
-    insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
-  };
+// let coffeeMachine = {
+//     brand: "Super Coffee",
+//     prices: {
+//       cappuccino: 2.4,
+//       blackCoffee: 1.5,
+//       flatWhite: 3.0,
+//     },
+//     insertedAmount: 0,
+//     insertMoney: function (amount) {
+//       return amount = this.insertedAmount;
+//     },
+//     getCoffee: function (coffee) {
+//       coffee = Object.keys(coffeeMachine.prices)
+//       const selectingPrices = coffeeMachine.prices
+//       const values = Object.keys(selectingPrices).map(function(e) {
+//         return selectingPrices[e]
+//       })
+//       if(coffeeMachine.insertedAmount >= values){
+//         console.log('Please take your ');
+//       }else{
+//            console.log(`Sorry you don't have enough money for a ${coffee}`);
+//       }
+//     },
+//   };
   
-  /*
-  DO NOT EDIT ANYTHING BELOW THIS LINE
-  */
+//   /*
+//   DO NOT EDIT ANYTHING BELOW THIS LINE
+//   */
   
-  coffeeMachine.insertMoney(2.4);
-  console.log(
-    `Expected result: 'Please take your cappuccino'. Actual result: ${coffeeMachine.getCoffee(
-      "cappuccino"
-    )}`
-  );
+//   coffeeMachine.insertMoney(2.4);
+//   console.log(
+//     `Expected result: 'Please take your cappuccino'. Actual result: ${coffeeMachine.getCoffee(
+//       "cappuccino"
+//     )}`
+//   );
   
-  coffeeMachine.insertMoney(1.5);
-  console.log(
-    `Expected result: 'Please take your blackCoffee'. Actual result: ${coffeeMachine.getCoffee(
-      "blackCoffee"
-    )}`
-  );
+//   coffeeMachine.insertMoney(1.5);
+//   console.log(
+//     `Expected result: 'Please take your blackCoffee'. Actual result: ${coffeeMachine.getCoffee(
+//       "blackCoffee"
+//     )}`
+//   );
   
-  coffeeMachine.insertMoney(4.0);
-  console.log(
-    `Expected result: 'Please take your flatWhite'. Actual result: ${coffeeMachine.getCoffee(
-      "flatWhite"
-    )}`
-  );
+//   coffeeMachine.insertMoney(4.0);
+//   console.log(
+//     `Expected result: 'Please take your flatWhite'. Actual result: ${coffeeMachine.getCoffee(
+//       "flatWhite"
+//     )}`
+//   );
   
-  coffeeMachine.insertMoney(2.4);
-  console.log(
-    `Expected result: 'Sorry you don't have enough money for a flatWhite'. Actual result: ${coffeeMachine.getCoffee(
-      "flatWhite"
-    )}`
-  );
+//   coffeeMachine.insertMoney(2.4);
+//   console.log(
+//     `Expected result: 'Sorry you don't have enough money for a flatWhite'. Actual result: ${coffeeMachine.getCoffee(
+//       "flatWhite"
+//     )}`
+//   );

@@ -69,10 +69,6 @@ form.addEventListener("submit", (e)=>{
     describing();
 })
 
-
-
-//geting all the input values
-
 function checkInputs(){
     const emailValue = email.value.trim();
     const symbolCheckInEmail = emailValue.includes("@")

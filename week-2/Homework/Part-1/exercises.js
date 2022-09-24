@@ -13,9 +13,28 @@
  *      .....
  * </div>
  */
+
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  const createH1 = (content) => {
+    const h1 = document.createElement('h1');
+    h1.innerHTML = content;
+    return h1;
+  };
+  const h1Elements = arrayOfPeople.map((person) => createH1(person.name));
+   h1Elements.forEach((node) => content.appendChild(node));
+
+   const createH2 = (e) => {
+    const h2 = document.createElement("h2");
+    h2.innerHTML = e;
+    return h2;
+   };
+   const h2Elements = arrayOfPeople.map((person) => createH2(person.job));
+   h2Elements.forEach((node) => content.appendChild(node));
 }
+
 
 /**
  *
@@ -25,7 +44,22 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  //selecting div id
+  let content = document.querySelector("#content");
+  // creating ul element
+  const unorderedList = document.createElement("ul")
+  // appending ul element to the content div
+  const ul= content.appendChild(unorderedList)
+  // creating arrow function for creating li 
+  const createLi = (list) => {
+    const li = document.createElement("li");
+    li.innerHTML = list;
+    return li;
+  };
+  // using map function 
+  const liElements = shopping.map((grocery) => createLi(grocery));
+  // Again apending each node to the ul 
+  liElements.forEach((node) =>ul.appendChild(node))
 }
 
 /**
@@ -58,7 +92,33 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  const body = document.querySelector("body");
+  // Using arrow function to create p elements
+  const elementP = (para) =>{
+    const p = document.createElement("p")
+    p.innerHTML = para;
+    return p;
+  }
+  // using map function
+  const booksElements = books.map((book) => elementP(book.title));
+  //appending every node to body
+  
+  // create ul element
+  const unorderedList = document.createElement("ul")
+  // appending ul element to the content div
+  const ul= content.appendChild(unorderedList)
+  // creating arrow function for creating li 
+  const createLi = (list) => {
+    const li = document.createElement("li");
+    li.innerHTML = list;
+    return li;
+  };
+  // using map function 
+  const liElements = books.map((book) => createLi(book));
+  booksElements.forEach((node)=> ul.appendChild(node));
+
+
+
 }
 
 //

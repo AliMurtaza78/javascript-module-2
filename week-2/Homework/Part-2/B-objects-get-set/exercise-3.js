@@ -3,7 +3,11 @@
 */
 
 // WRITE CODE HERE
-
+const kitten = {
+    name:"Gilbert",
+    age:1,
+    color:"brown"
+}
 
 console.log(kitten.name);
 
