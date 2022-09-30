@@ -59,8 +59,22 @@ var movies = [
 ];
 
 // create showMovies function
+function showMovies(MoviesList){
+  // Creating P Elements according to the given properties of the objects
+   const createP = (list) =>{
+    const p = document.createElement("p");
+    p.innerHTML = list;
+    return p
+   }
+   // Selecting Id
+  const moviesId = document.querySelector("#all-movies")
+  // Creating map function
+  const moviesElements = MoviesList.map((e) => createP(e.title))
+  // appending each node of map function to the id 
+  moviesElements.forEach((node) => moviesId.appendChild(node));
+}
 
-
+setTimeout((showMovies(movies),5000));
 // create a new movie object for your favorite movie
 
 

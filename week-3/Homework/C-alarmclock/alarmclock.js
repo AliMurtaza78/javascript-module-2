@@ -1,4 +1,8 @@
-function setAlarm() {}
+const inputField = document.querySelector("#alarmSet").value
+
+function setAlarm() {
+ 
+}
 
 // DO NOT EDIT BELOW HERE
 

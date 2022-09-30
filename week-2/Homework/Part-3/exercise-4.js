@@ -59,18 +59,35 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-    
-      const availableSeats = restaurants.map((e) => e.numberOfCustomers < e.totalSeats)
-      console.log(availableSeats)
-      if(availableSeats >= numberOfPeople){
-        return availableSeats.name
-      }
+      const availableRestaurants = []
+     this.restaurants.map((e) => {
+        const seatsAvailable = (e.totalSeats - e.numberOfCustomers)
+        
+        if(seatsAvailable >= numberOfPeople)
+       availableRestaurants.push(e.name)
+      }) 
+      return availableRestaurants
     },
     findRestaurantServingDish: function (dishName) {
-      // Complete here
+      const  availableDishes = []
+      
+      this.restaurants.map((e) => {
+        const checkingDish = e.menu.includes(dishName)
+        if(checkingDish){
+          availableDishes.push(e.name) 
+        }
+      })
+      return availableDishes;
     },
     countNumberOfRestaurantsInArea: function (area) {
-      // Complete here
+      const findingArea = []
+      this.restaurants.map((e) => {
+        const locateArea = e.address.area.includes(area);
+        if(locateArea){
+          findingArea.push(e.name) 
+        }
+      })
+      return findingArea.length;
     },
   };
   
