@@ -23,7 +23,7 @@ let coffeeMachine = {
       const coffeeChecker = Object.keys(this.prices).findIndex(c => c === coffee)
       const prices = Object.values(this.prices)[coffeeChecker]
   
-      if (this.insertedAmount >= prices) {
+      if (this.insertedAmount >= prices ) {
         return `'Please take your ${coffee}'`
       } else {
         return `'Sorry you don't have enough money for a ${coffee}'`
